@@ -10,13 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180417142340) do
+ActiveRecord::Schema.define(version: 20180417162854) do
 
   create_table "spots", force: :cascade do |t|
     t.integer "address_number"
     t.integer "street_direction"
     t.string "street_name"
     t.string "street_type"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "zones", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
