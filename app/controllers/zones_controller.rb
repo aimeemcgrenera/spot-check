@@ -1,5 +1,5 @@
 class ZonesController < ApplicationController
   def index
-    @results = Zone.retrieve_results("Division")
+    @results = Zone.getData("ROSCOE")
   end
 end
