@@ -7,8 +7,15 @@ class Spot < ActiveRecord::Base
     #street types: AVE, BLVD, ST, PL, TER, RD, PKWY, DR, CT, LN, WAY
 
     def uppercase
-      street_name.upcase!
-      street_direction.upcase!
+      self.street_name.upcase!
     end
-    
+
+    def even?
+      self.address_number.even? ? "E" : "O"
+    end
+
+    def numberRange(address_number)
+    address_number >= Zone.address_range_low && address_number <= Zone.address_range_high ? "Permit Zone" : "Not a Permit Zone"
+    end
+
 end
