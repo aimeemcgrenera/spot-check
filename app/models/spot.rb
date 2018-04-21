@@ -11,7 +11,7 @@ class Spot < ActiveRecord::Base
     end
 
     def even?
-      self.address_number.even? ? "E" : "O"
+      even_odd = self.address_number.even? ? "E" : "O"
     end
 
     def numberRange(address_number)

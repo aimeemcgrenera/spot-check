@@ -1,6 +1,7 @@
 class ZonesController < ApplicationController
+
   def index
-    @results = Zone.getData("ROSCOE", "W")
+    @results = Zone.getData("E", "W", "ROSCOE", "ST")
   end
 
 
