@@ -11,8 +11,9 @@ class Zone < ActiveRecord::Base
       req.params['street_type'] = street_type
       req.params['status'] = "ACTIVE"
     end
-    @body_hash = JSON.parse(resp.body)
+    body_hash = JSON.parse(resp.body)
     binding.pry
+    @address_high = body_hash["response"]["address_range_high"]
   end
 
   # def self.getData(even_odd, street_direction, street_name, street_type)
@@ -28,11 +29,11 @@ class Zone < ActiveRecord::Base
 
 
   #get input from form and check if it is a permit range
-  def getNumber(address_number)
-    address_hash = JSON.parse(@hash)
-    @num1 = body_hash["response"]["address_range_low"]
-    @num2 = body_hash["response"]["address_range_high"]
-  end
+  # def getNumber(address_number)
+  #   address_hash = JSON.parse(@hash)
+  #   @num1 = body_hash["response"]["address_range_low"]
+  #   @num2 = body_hash["response"]["address_range_high"]
+  # end
 
 
 end
