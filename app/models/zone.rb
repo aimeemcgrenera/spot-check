@@ -12,8 +12,7 @@ class Zone < ActiveRecord::Base
       req.params['status'] = "ACTIVE"
     end
     body_hash = JSON.parse(resp.body)
-    binding.pry
-    @address_high = body_hash["response"]["address_range_high"]
+    # @address_high = body_hash[0]["address_range_high"]
   end
 
   # def self.getData(even_odd, street_direction, street_name, street_type)

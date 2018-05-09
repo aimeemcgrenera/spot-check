@@ -22,6 +22,18 @@ ActiveRecord::Schema.define(version: 20180417162854) do
   end
 
   create_table "zones", force: :cascade do |t|
+    t.integer "row_id"
+    t.string "status"
+    t.integer "zone"
+    t.string "odd_even"
+    t.integer "address_range_low"
+    t.integer "address_range_high"
+    t.string "street_direction"
+    t.string "street_name"
+    t.string "street_type"
+    t.string "second_street_direction"
+    t.string "buffer"
+    t.integer "ward_low"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
